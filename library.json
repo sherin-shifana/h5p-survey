@@ -1,0 +1,44 @@
+{
+  "title": "Survey",
+  "majorVersion": 1,
+  "minorVersion": 2,
+  "patchVersion": 0,
+  "runnable": 1,
+  "machineName": "H5P.Survey",
+  "author": "H5P-SPACE",
+  "embedTypes": [
+    "iframe"
+  ],
+  "preloadedJs": [
+    {
+      "path": "js/h5p-survey.js"
+    },
+    {
+      "path": "js/h5p-timer.js"
+    }
+  ],
+  "preloadedCss": [
+    {
+      "path": "css/h5p-survey.css"
+    }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.RangeList",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.Timer",
+      "majorVersion": 0,
+      "minorVersion": 4
+    },
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 3
+    }
+  ]
+}
