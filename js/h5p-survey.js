@@ -28,15 +28,21 @@ H5P.Survey = (function ($, UI) {
         'text': '...',
         'class': 'show-feedback'
       });
+
       for (let j = 0; j < this.options.questions[i].answers.length; j++) {
 
         this.$coli1 = $('<td class="td" scope="row" data-id='+i+'.'+j+'>'+this.options.questions[i].answers[j].text+'</td><br>');
         this.$coli2 = $('<td class="td" scope="row" data-id='+i+'.'+j+'>'+this.options.questions[i].answers[j].score+'</td><br>');
         this.$coli3 = $('<td class="td" scope="row" data-id='+i+'.'+j+'>'+this.options.questions[i].answers[j].feedback+'</td><br>');
 
-        if (this.$coli1[0].innerText === that.selected[i][0].innerText) {
-          this.$coli1.addClass('selected-answer');
+        if (that.selected) {
+          for (let k = 0; k < that.selected.length; k++) {
+            if (this.$coli1[0].innerText === that.selected[k][0].innerText) {
+              this.$coli1.addClass('selected-answer');
+            }
+          }
         }
+
 
         this.$coli1.appendTo(that.$col3);
         this.$coli2.appendTo(that.$col4);
@@ -287,6 +293,7 @@ H5P.Survey = (function ($, UI) {
       let tooltipPos = percentage - 7.5;
       this.$dot.css('right', String(tooltipPos) + '%');
       console.log(that.totalQuestions, that.currentIndex);
+      console.log(that.skip);
       tooltip = that.currentIndex + 1 +' / '+ that.totalQuestions;
       this.$dot.html(tooltip);
   };
@@ -321,7 +328,11 @@ H5P.Survey = (function ($, UI) {
           that.createPopUp();
         }
         else {
+          that.progress = (((that.currentIndex+1)/that.totalQuestions)*100);
+          that.updateProgress();
           that.currentIndex = that.currentIndex + 1;
+          console.log(that.currentIndex);
+
           that.showQuestionCard();
         }
 
