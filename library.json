@@ -11,10 +11,10 @@
   ],
   "preloadedJs": [
     {
-      "path": "js/h5p-survey.js"
+      "path": "scripts/h5p-survey.js"
     },
     {
-      "path": "js/h5p-timer.js"
+      "path": "scripts/h5p-timer.js"
     }
   ],
   "preloadedCss": [
