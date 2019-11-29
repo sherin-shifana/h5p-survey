@@ -5,7 +5,7 @@ H5P Survey is a content type which contain a set of questions. We can create a q
 
 ## Screenshots
 
-<img src=""/>
+<img src="https://gitlab.com/icfoss/h5p-survey/blob/master/screenshots/survey.png"/>
 
 
 ## License
